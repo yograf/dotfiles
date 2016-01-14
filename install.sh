@@ -1,51 +1,21 @@
 #!/bin/sh
 
-brew="/usr/local/bin/brew"
-if [ -f "$brew" ]
-then
-  echo "Homebrew is installed, nothing to do here"
-else
-  echo "Homebrew is not installed, installing now"
-  echo "This may take a while"
-  echo "Homebrew requires osx command lines tools, please download xcode first"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo "Yograf installing..."
+ sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm -y
+ sudo add-apt-repository ppa:neovim-ppa/unstable -y
+ sudo apt-get update
+ sudo apt-get install tmux zsh -y
+sudo apt-get install build-essential curl git m4 python-setuptools ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev -y
+ sudo apt-get install software-properties-common -y
+sudo apt-get install python-dev python-pip python3-dev python3-pip -y
+sudo apt-get install neovim -y
+sudo pip2 install neovim
+sudo pip3 install neovim
+sudo apt-get install nodejs npm -y
 
-fi
 
-packages=(
-"git"
-"node"
-"tmux"
-"lua"
-"neovim"
-"weechat --with-lua --with-perl --with-python --with-ruby"
-)
-
-for i in "${packages[@]}"
-do
-  brew install $i
-  echo "---------------------------------------------------------"
-done
-
-echo "installing RCM, for dotfiles management"
-brew tap thoughtbot/formulae
-brew install rcm
-echo "---------------------------------------------------------"
-
-localGit="/usr/local/bin/git"
-if [ -f "$localGit" ]
-then
-  echo "git is all good"
-else
-  echo "git is not installed"
-fi
-# Okay so everything should be good
-# Fingers cross at least
-# Now lets clone my dotfiles repo into .dotfiles/
-echo "---------------------------------------------------------"
-
-echo "Cloning Mike's dotfiles insto .dotfiles"
-git clone https://github.com/mhartington/dotfiles.git ~/.dotfiles
+echo "Cloning Yograf's dotfiles insto .dotfiles"
+git clone https://github.com/yograf/dotfiles-1.git ~/.dotfiles
 
 cd .dotfiles
 git submodule update --init --recursive
@@ -66,19 +36,11 @@ chsh -s $(which zsh)
 echo "You'll need to log out for this to take effect"
 echo "---------------------------------------------------------"
 
-echo "running oxs defaults"
-~./osx.sh
 
 echo "---------------------------------------------------------"
-echo "Downloading Hammerspoon"
-cd ~/Downloads
-curl https://github.com/Hammerspoon/hammerspoon/releases/download/0.9.43/Hammerspoon-0.9.43.zip | unzip
-unzip Hammerspoon-0.9.43.zip
-mv Hammerspoon /Applications/
 echo 'done'
 echo "---------------------------------------------------------"
 echo "All done!"
-echo "and change your terminal font to source code pro"
 echo "Cheers"
 -echo "---------------------------------------------------------"
 

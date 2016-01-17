@@ -1,11 +1,13 @@
-"|  \/  (_) |                        (_)
-"| .  . |_| | _____  ___   _ ____   ___ _ __ ___  _ __ ___
-"| |\/| | | |/ / _ \/ __| | '_ \ \ / / | '_ ` _ \| '__/ __|
-"| |  | | |   <  __/\__ \ | | | \ V /| | | | | | | | | (__
-"\_|  |_/_|_|\_\___||___/ |_| |_|\_/ |_|_| |_| |_|_|  \___|
+" _____.___________    _________________   _____ ___________  ____   ___.___   _____   
+" \__  |   \_____  \  /  _____\______   \ /  _  \\_   _____/  \   \ /   |   | /     \  
+" /   |   |/   |   \/   \  ___|       _//  /_\  \|    __)     \   Y   /|   |/  \ /  \ 
+" \____   /    |    \    \_\  |    |   /    |    |     \       \     / |   /    Y    \
+" / ______\_______  /\______  |____|_  \____|__  \___  /        \___/  |___\____|__  /
+" \/              \/        \/       \/        \/    \/                            \/                                                     
+
 "
-" Author: Mike Hartington
-" repo  : https://github.com/mhartington/dotfiles/
+" Author: Yograf
+" repo  : https://github.com/yograf/dotfiles-1/
 "
 
 " Setup NeoBundle  ----------------------------------------------------------{{{
@@ -41,7 +43,6 @@
   " NeoBundle 'mxw/vim-jsx'
   NeoBundle 'othree/yajs.vim'
   NeoBundle '1995eaton/vim-better-javascript-completion'
-  NeoBundleLazy 'kchmck/vim-coffee-script',  {'autoload':{'filetypes':['coffee']}}
   NeoBundle 'hail2u/vim-css3-syntax'
   NeoBundle 'moll/vim-node'
   NeoBundle 'burnettk/vim-angular'
@@ -50,13 +51,10 @@
   NeoBundleLazy 'elzr/vim-json', {'autoload':{'filetypes':['json']}}
   NeoBundle 'tpope/vim-markdown'
   NeoBundle 'suan/vim-instant-markdown'
-" Typescript
-  NeoBundle 'HerringtonDarkholme/yats.vim'
-  NeoBundle 'Quramy/tsuquyomi'
-  NeoBundle 'vim-scripts/applescript.vim'
+
 " colorscheme & syntax highlighting
-  NeoBundle 'mhartington/oceanic-next'
-  NeoBundle 'Yggdroot/indentLine'
+
+
   NeoBundle 'Raimondi/delimitMate'
   NeoBundle 'valloric/MatchTagAlways'
  " Git helpers
@@ -115,7 +113,27 @@
   NeoBundle 'junegunn/limelight.vim'
 "  NeoBundle 'https://github.com/danielmiessler/VimBlog'
   NeoBundle 'https://github.com/neovim/node-host'
-  " NeoBundle 'Wildog/airline-weather.vim', {'depends': 'mattn/webapi-vim'}
+
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Townk/vim-autoclose'
+
+NeoBundle 'bling/vim-airline' 
+NeoBundle 'Shougo/tabpagebuffer.vim'
+NeoBundle 'tsukkee/unite-help'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'mxw/vim-jsx'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'easymotion/vim-easymotion'
+
+
+NeoBundle 'jaxbot/semantic-highlight.vim'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'yograf/phpfolding.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle  'scrooloose/syntastic'
+  
 
   NeoBundle 'ryanoasis/vim-devicons'
   call neobundle#end()

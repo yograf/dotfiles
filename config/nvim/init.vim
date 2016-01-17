@@ -63,7 +63,7 @@
   NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'jreybert/vimagit'
   NeoBundle 'airblade/vim-gitgutter'
-  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+  "NeoBundle 'Xuyuanp/nerdtree-git-plugin'
   NeoBundle 'https://github.com/jaxbot/github-issues.vim'
 " untils
   NeoBundle 'benekastah/neomake'

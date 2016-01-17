@@ -12,6 +12,9 @@ sudo apt-get install neovim -y
 sudo pip2 install neovim
 sudo pip3 install neovim
 sudo apt-get install nodejs npm -y
+sudo apt-get install rcm -y
+
+sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 
 echo "Cloning Yograf's dotfiles insto .dotfiles"

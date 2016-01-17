@@ -32,7 +32,8 @@ echo "---------------------------------------------------------"
 rcup
 
 echo "---------------------------------------------------------"
-
+echo "Installing Neovim"
+nvim +NeoBundleInstall +qall
 echo "Changing to zsh"
 chsh -s $(which zsh)
 

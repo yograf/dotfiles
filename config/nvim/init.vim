@@ -103,17 +103,17 @@
   NeoBundle 'matthewsimo/angular-vim-snippets'
 
   NeoBundle 'KabbAmine/gulp-vim'
-  NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf' }
-  NeoBundle 'junegunn/fzf.vim'
+ " NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf' }
+"  NeoBundle 'junegunn/fzf.vim'
   NeoBundle 'ashisha/image.vim'
   NeoBundle 'mhinz/vim-sayonara'
-  NeoBundle 'vim-lua-ftplugin', {'depends': 'xolox/vim-misc'}
-  NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+"  NeoBundle 'vim-lua-ftplugin', {'depends': 'xolox/vim-misc'}
+"  NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
   NeoBundle 'terryma/vim-multiple-cursors'
-  NeoBundle 'rhysd/github-complete.vim'
+"  NeoBundle 'rhysd/github-complete.vim'
   NeoBundle 'junegunn/goyo.vim'
   NeoBundle 'junegunn/limelight.vim'
-  NeoBundle 'https://github.com/danielmiessler/VimBlog'
+"  NeoBundle 'https://github.com/danielmiessler/VimBlog'
   NeoBundle 'https://github.com/neovim/node-host'
   " NeoBundle 'Wildog/airline-weather.vim', {'depends': 'mattn/webapi-vim'}
 

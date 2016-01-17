@@ -1,3 +1,6 @@
+curl -L https://raw.githubusercontent.com/yograf/dotfiles-1/master/install.sh > yogsetup.sh && sh yogsetup.sh
+
+
 # Obligatory Dotfile Repo
 
 ~~Nothing super crazy going on here, but some sensable vim and tmux configs.~~

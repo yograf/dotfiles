@@ -11,9 +11,10 @@ sudo apt-get install python-dev python-pip python3-dev python3-pip -y
 sudo apt-get install neovim -y
 sudo pip2 install neovim
 sudo pip3 install neovim
-sudo apt-get install nodejs npm -y
-sudo apt-get install rcm -y
 
+sudo apt-get install rcm -y
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 
@@ -24,6 +25,11 @@ cd .dotfiles
 git submodule update --init --recursive
 
 cd $HOME
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
 echo "running RCM's rcup command"
 echo "This is symlink the rc files in .dofiles"
 echo "with the rc files in $HOME"

@@ -13,6 +13,7 @@ sudo pip2 install neovim
 sudo pip3 install neovim
 
 sudo apt-get install rcm -y
+sudo apt-get install virtualbox-guest-additions-iso -y
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo ln -s /usr/bin/nodejs /usr/bin/node

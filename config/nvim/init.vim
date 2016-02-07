@@ -29,7 +29,9 @@
 
 NeoBundle 'Shougo/vimproc.vim', { 'do': 'make' }
 NeoBundle 'Shougo/deoplete.nvim'
-NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Yggdroot/hiPairs'
+NeoBundle 'SirVer/ultisnips'
+"NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'joonty/vdebug'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Townk/vim-autoclose'
@@ -104,33 +106,20 @@ let g:unite_data_directory='~/.nvim/.cache/unite'
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable=1
 let g:unite_prompt='» '
-nnoremap <C-p> :Unite file_mru file_rec/neovim:~/servers/ploto/synppp/sites/all <cr>
+nnoremap <C-p> :Unite file_mru file_rec/neovim <cr>
 nnoremap <space>/ :Unite line <cr>
 nnoremap <space>b :Unite -quick-match buffer <cr>
 nnoremap <C-l> :Unite<cr>
 
 nnoremap <space> za   "Space key for folding switch
 
-" Enable snipMate compatibility feature.
-  let g:neosnippet#enable_snipmate_compatibility = 1
-
-let g:neosnippet#disable_runtime_snippets = {
-        \   '_' : 1,
-        \ }
-
-  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k>     <Plug>(neosnippet_expand_target)
-" Tell Neosnippet about the other snippets
-  let g:neosnippet#snippets_directory='~/.config/nvim/yog-snippets'
-
-" SuperTab like snippets behavior.
-  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: pumvisible() ? "\<C-n>" : "\<TAB>"
-  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: "\<TAB>"
+ " ultisnips
+  let g:UltiSnipsExpandTrigger="<tab>"
+  let g:UltiSnipsJumpForwardTrigger="<c-j>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+ 
+  " If you want :UltiSnipsEdit to split your window.
+  let g:UltiSnipsEditSplit="vertical"
 
 
 " Let vim know Drupal files are php

@@ -1,5 +1,5 @@
-curl -L https://raw.githubusercontent.com/yograf/dotfiles-1/master/install.sh > yogsetup.sh && sh yogsetup.sh
-
+curl -L https://raw.githubusercontent.com/yograf/dotfiles/master/install.sh > yogsetup.sh && sh yogsetup.sh
+curl https://cdn.rawgit.com/yograf/dotfiles/master/install.sh | sh
 
 # Obligatory Dotfile Repo
 
@@ -8,11 +8,7 @@ curl -L https://raw.githubusercontent.com/yograf/dotfiles-1/master/install.sh > 
 I lied, this is some crazy stuff...
 So yeah...Here be dragons?
 
-## Note to iterm
-Iterm nightly is a must.
-Or any terminal that supports true colors.
 
-Once installed, click on the iterm color config in `config/colors` to add oceanicNext
 
 
 ## NeoVim
@@ -35,27 +31,7 @@ already have, and is eaiser to set up.
 The guy is big in the vim/neovim community and his plugins are top notch.
 Hell, even my plugin manager is made by him. If he ever sees this, thanks Shougo!
 
-### [Quramy/tsuquyomi](https://github.com/Quramy/tsuquyomi)
-Code completion for typescript. This is a must for me, and since I'm in neovim, it's non-block, yay async. A bit difficult to setup but it's pretty well documented.
 
-```bash
-# install typescript
-npm -g install typescript
-```
-
-```viml
-" install vimproc
-NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
-
-NeoBundle 'Quramy/tsuquyomi'
 ```
 vimproc is needed since we need to run a TSServer. Sadly, you need both even in neovim
 
@@ -110,7 +86,7 @@ Note this install is if you have a new machine, and need everything setup.
 For that, I sugguest
 
 ```
-curl https://cdn.rawgit.com/mhartington/dotfiles/master/install.sh | sh
+
 ```
 If you already have things like git, homebrew,node etc installed, then here have a cookie and sit back.
 You should just be able to just run these few lines.

@@ -1,10 +1,17 @@
 #!/bin/sh
 
   echo "Yograf installing..."
+  sudo apt-get install apt-transport-https ca-certificates -y
+  sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+  echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee -a /etc/apt/sources.list.d/docker.list
  sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm -y
  sudo add-apt-repository ppa:neovim-ppa/unstable -y
  sudo apt-get update
  sudo apt-get install tmux zsh -y
+ apt-get install apparmor -y
+ sudo apt-get install docker-engine -y
+ sudo service docker start
+ sudo usermod -aG docker yog
 sudo apt-get install build-essential curl git m4 python-setuptools ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev -y
  sudo apt-get install software-properties-common -y
 sudo apt-get install python-dev python-pip python3-dev python3-pip -y

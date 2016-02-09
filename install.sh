@@ -8,7 +8,9 @@
  sudo add-apt-repository ppa:neovim-ppa/unstable -y
  sudo apt-get update
  sudo apt-get install tmux zsh -y
- apt-get install apparmor -y
+ #silver searcher - http://geoff.greer.fm/ag/
+ sudo apt-get install silversearcher-ag -y
+ sudo apt-get install apparmor -y
  sudo apt-get install docker-engine -y
  sudo service docker start
  sudo usermod -aG docker yog

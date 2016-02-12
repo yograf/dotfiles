@@ -13,7 +13,7 @@
  sudo apt-get install apparmor -y
  sudo apt-get install docker-engine -y
  sudo service docker start
- sudo usermod -aG docker yog
+ sudo usermod -aG docker y
 sudo apt-get install build-essential curl git m4 python-setuptools ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev -y
  sudo apt-get install software-properties-common -y
 sudo apt-get install python-dev python-pip python3-dev python3-pip -y

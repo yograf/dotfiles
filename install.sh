@@ -20,7 +20,7 @@ sudo apt-get install python-dev python-pip python3-dev python3-pip -y
 sudo apt-get install neovim -y
 sudo pip2 install neovim
 sudo pip3 install neovim
-
+sudo pip install docker-compose
 sudo apt-get install rcm -y
 sudo apt-get install virtualbox-guest-additions-iso -y
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -

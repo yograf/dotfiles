@@ -1,12 +1,21 @@
 #!/bin/sh
 
   echo "Yograf installing..."
-  sudo apt-get install apt-transport-https ca-certificates -y
+  sudo apt-get update
+  #vbox guest addition - make optional
+  sudo apt-get install virtualbox-guest-additions-iso -y
+  
+  # docker 
+  # GPG 
   sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
   echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee -a /etc/apt/sources.list.d/docker.list
+ #rcm repo
  sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm -y
+ #nvim repo
  sudo add-apt-repository ppa:neovim-ppa/unstable -y
  sudo apt-get update
+ 
+ 
  sudo apt-get install tmux zsh -y
  #silver searcher - http://geoff.greer.fm/ag/
  sudo apt-get install silversearcher-ag -y
@@ -22,7 +31,7 @@ sudo pip2 install neovim
 sudo pip3 install neovim
 sudo pip install docker-compose
 sudo apt-get install rcm -y
-sudo apt-get install virtualbox-guest-additions-iso -y
+
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo ln -s /usr/bin/nodejs /usr/bin/node

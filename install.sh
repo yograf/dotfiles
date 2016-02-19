@@ -16,7 +16,7 @@
  sudo apt-get update
  
  
- sudo apt-get install tmux zsh -y
+ sudo apt-get install tmux zsh php5-cli -y
  #silver searcher - http://geoff.greer.fm/ag/
  sudo apt-get install silversearcher-ag -y
  sudo apt-get install apparmor -y
@@ -61,11 +61,13 @@ echo "---------------------------------------------------------"
 echo "Installing Neovim"
 nvim +NeoBundleInstall +qall
 echo "Changing to zsh"
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 
 echo "You'll need to log out for this to take effect"
 echo "---------------------------------------------------------"
-
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+composer global require drush/drush:dev-master
 
 echo "---------------------------------------------------------"
 echo 'done'

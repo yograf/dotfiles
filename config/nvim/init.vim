@@ -82,7 +82,11 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
 
 " Airline power line
+let g:webdevicons_enable = 1
 let g:airline_powerline_fonts = 1
+let g:webdevicons_enable_unite = 1
+let g:webdevicons_enable_airline_tabline = 1
+
 let g:semanticTermColors = [28,1,2,3,4,5,6,7,25,9,10,34,12,13,14,15,16,125,124,19]
 :nnoremap <Leader>s :SemanticHighlightToggle<cr>
 set hlsearch " Highlight searches

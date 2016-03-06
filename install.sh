@@ -2,8 +2,6 @@
 
   echo "Yograf installing..."
   sudo apt-get update
-  #vbox guest addition - make optional
-  sudo apt-get install virtualbox-guest-additions-iso -y
   
   # docker 
   # GPG 

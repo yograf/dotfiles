@@ -31,13 +31,14 @@ NeoBundle 'Shougo/vimproc.vim', { 'do': 'make' }
 NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'Yggdroot/hiPairs'
 NeoBundle 'SirVer/ultisnips'
-"NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'ryanoasis/vim-devicons'
 NeoBundle 'joonty/vdebug'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'bling/vim-airline' 
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'Shougo/tabpagebuffer.vim'
 NeoBundle 'tsukkee/unite-help'
 NeoBundle 'honza/vim-snippets'
@@ -80,6 +81,8 @@ map <S-L> gt
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
 
+" Airline power line
+let g:airline_powerline_fonts = 1
 let g:semanticTermColors = [28,1,2,3,4,5,6,7,25,9,10,34,12,13,14,15,16,125,124,19]
 :nnoremap <Leader>s :SemanticHighlightToggle<cr>
 set hlsearch " Highlight searches

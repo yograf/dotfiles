@@ -17,7 +17,6 @@
  
   " Required:
       set runtimepath+=~/.nvim/bundle/neobundle.vim/
-      " set runtimepath+=~/Github/deoplete-angular/
    endif
  
   " Required:
@@ -80,6 +79,13 @@ map <S-L> gt
 " Store swap files in fixed location, not current directory.
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
+" ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " Airline power line
 let g:webdevicons_enable = 1
@@ -120,14 +126,6 @@ nnoremap <C-l> :Unite<cr>
 
 nnoremap <space> za   "Space key for folding switch
 
- " ultisnips
-  let g:UltiSnipsExpandTrigger="<tab>"
-  let g:UltiSnipsJumpForwardTrigger="<c-j>"
-  let g:UltiSnipsJumpBackwardTrigger="<c-k>"
- 
-  " If you want :UltiSnipsEdit to split your window.
-  let g:UltiSnipsEditSplit="vertical"
-
 
 " Let vim know Drupal files are php
 if has("autocmd")
@@ -145,13 +143,13 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 " Wrap words
 
 " Save file when exiting insert mode
-"inoremap <Esc> <Esc>:w<CR>
+map <Esc> <Esc>:w<CR>
 " Use ; for commands
 nnoremap ; :
 
 "autocmd FileType php :autocmd InsertLeave * :w
 
-map <F5> <Esc>:EnableFastPHPFolds<Cr> 
+map <F12> <Esc>:EnableFastPHPFolds<Cr> 
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 inoremap <Up> <NOP>
@@ -163,3 +161,11 @@ syntax enable
 " colorscheme solarized
 let g:solarized_termcolors=256
 set wrap
+" set autoindent
+set ai 
+" set smart autoindent
+set si
+" hilight cursor coloumn
+"
+" Boost speed by altering character redraw rates to your terminal
+set ttyfast

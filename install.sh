@@ -58,12 +58,16 @@ cd .dotfiles
 git submodule update --init --recursive
 
 cd $HOME
-sudo rm .bashrc
+
+echo "Installing Prezto"
 git clone --recursive https://github.com/yograf/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-#setopt EXTENDED_GLOB
-#for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-#  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-#done
+ln -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zlogin" .zlogin 
+ln -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zlogout" .zlogout
+ln -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zpreztorc" .zpreztorc
+ln -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zprofile" .zprofile
+ln -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zshenv" .zshenv 
+ln -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zshrc" .zshrc 
+
 echo "running RCM's rcup command"
 echo "This is symlink the rc files in .dofiles"
 echo "with the rc files in $HOME"

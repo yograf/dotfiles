@@ -37,6 +37,9 @@ sudo apt-get install neovim -y
 sudo pip2 install neovim
 sudo pip3 install neovim
 
+echo "installing diff-highlight"
+sudo pip install diff-highlight
+
 echo "Installing docker compose"
 sudo pip install docker-compose
 sudo apt-get install rcm -y

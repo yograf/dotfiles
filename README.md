@@ -1,6 +1,13 @@
 curl -L https://raw.githubusercontent.com/yograf/dotfiles/master/install.sh > yogsetup.sh && sh yogsetup.sh
 
 curl https://cdn.rawgit.com/yograf/dotfiles/master/install.sh | sh
+todo - create ssh pub
+
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+  
+  ~/.ssh/config
 
 # Obligatory Dotfile Repo
 

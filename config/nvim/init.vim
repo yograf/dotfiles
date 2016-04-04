@@ -170,6 +170,8 @@ set si
 " Boost speed by altering character redraw rates to your terminal
 set ttyfast
 
+" Show trailing spaces
+set list!
 
 " make j and k work on wraped lines
 noremap  <buffer> <silent> k gk

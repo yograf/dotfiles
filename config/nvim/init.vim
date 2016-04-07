@@ -1,6 +1,5 @@
 " Plugins
 " Setup NeoBundle  ----------------------------------------------------------{{{
-   " If vundle is not installed, do it first
      let bundleExists = 1
      if (!isdirectory(expand("$HOME/.nvim/bundle/neobundle.vim")))
         call system(expand("mkdir -p $HOME/.nvim/bundle"))
@@ -36,7 +35,8 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'bling/vim-airline' 
+NeoBundle 'Shougo/neoyank.vim'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'Shougo/tabpagebuffer.vim'
 NeoBundle 'tsukkee/unite-help'
@@ -44,6 +44,7 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'easymotion/vim-easymotion'
 NeoBundle 'jaxbot/semantic-highlight.vim'
@@ -70,9 +71,9 @@ hi TabLineFill ctermfg=NONE ctermbg=NONE
 hi TabLine ctermfg=Blue ctermbg=236
 hi TabLineSel ctermfg=white ctermbg=red
 set number                      " Line numbers on
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace   
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
-" Move to left and right tabs  
+" Move to left and right tabs
 map <S-H> gT
 map <S-L> gt
 
@@ -113,7 +114,7 @@ set linespace=0         " Set line-spacing to minimum.
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
 set nostartofline       " Do not jump to first character with page commands.
 "set wildignorecase
-set ignorecase " Command line ignore case 
+set ignorecase " Command line ignore case
 
 let g:unite_data_directory='~/.nvim/.cache/unite'
 let g:unite_enable_start_insert=1
@@ -123,7 +124,7 @@ nnoremap <C-p> :Unite file_mru file_rec/neovim <cr>
 nnoremap <space>/ :Unite line <cr>
 nnoremap <space>b :Unite -quick-match buffer <cr>
 nnoremap <C-l> :Unite<cr>
-
+nnoremap <space>y :Unite history/yank<cr>
 nnoremap <space> za   "Space key for folding switch
 
 
@@ -144,6 +145,7 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " Save file when exiting insert mode
 map <Esc> <Esc>:w<CR>
+
 " Use ; for commands
 nnoremap ; :
 
@@ -162,13 +164,16 @@ syntax enable
 let g:solarized_termcolors=256
 set wrap
 " set autoindent
-set ai 
+set ai
 " set smart autoindent
 set si
 " hilight cursor coloumn
 "
 " Boost speed by altering character redraw rates to your terminal
 set ttyfast
+
+"Neovim Terminal
+:tnoremap <Esc> <C-\><C-n>
 
 " Show trailing spaces
 set list!

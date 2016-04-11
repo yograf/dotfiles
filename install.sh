@@ -51,7 +51,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 echo "Installing Composer and Drush"
 curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
+sudo mv composer.phar /usr/local/bin/composer
 composer global require drush/drush:dev-master
 
 echo "Cloning Yograf's dotfiles insto .dotfiles"

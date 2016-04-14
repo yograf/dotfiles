@@ -49,8 +49,17 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'easymotion/vim-easymotion'
 NeoBundle 'jaxbot/semantic-highlight.vim'
 NeoBundle 'ervandew/supertab'
+" PHP plugins
+NeoBundle 'yograf/vim-drupal-snippets'
+NeoBundle 'm2mdas/phpcomplete-extended'
 NeoBundle 'yograf/phpfolding.vim'
+NeoBundle 'kassio/neoterm'
+" Doc
+NeoBundle 'tobyS/vmustache'
+NeoBundle 'tobyS/pdv'
+
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle  'scrooloose/syntastic'
 NeoBundle  'scrooloose/syntastic'
 
 call neobundle#end()
@@ -59,8 +68,15 @@ call neobundle#end()
   let pluginsExist=1
   NeoBundleCheck
 " }}}
+
+
 let g:deoplete#enable_at_startup = 1
-let mapleader = ','
+let g:deoplete#auto_complete_start_length = 3
+let g:deoplete#enable_smart_case = 1
+
+
+
+ mapleader = ','
 " vim indent guides
 let g:indent_guides_auto_colors = 2
 hi IndentGuidesOdd  ctermbg=red
@@ -71,7 +87,7 @@ hi TabLineFill ctermfg=NONE ctermbg=NONE
 hi TabLine ctermfg=Blue ctermbg=236
 hi TabLineSel ctermfg=white ctermbg=red
 set number                      " Line numbers on
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+set listchars=tab:›\ ,trail:·,extends:#,nbsp:. " Highlight problematic whitespace
 
 " Move to left and right tabs
 map <S-H> gT
@@ -95,8 +111,10 @@ let g:webdevicons_enable_unite = 1
 let g:webdevicons_enable_airline_tabline = 1
 
 let g:semanticTermColors = [28,1,2,3,4,5,6,7,25,9,10,34,12,13,14,15,16,125,124,19]
-:nnoremap <Leader>s :SemanticHighlightToggle<cr>
+nnoremap <Leader>s :SemanticHighlightToggle<cr>
 set hlsearch " Highlight searches
+
+nnoremap <Leader>h :nohl<cr>
 set incsearch " Do incremental searching
 set expandtab " Insert spaces when TAB is pressed.
 set tabstop=2 shiftwidth=2 softtabstop=2 " This is what we like
@@ -116,6 +134,16 @@ set nostartofline       " Do not jump to first character with page commands.
 "set wildignorecase
 set ignorecase " Command line ignore case
 
+" Folding settings {{{
+
+set foldenable
+set foldmethod=syntax
+set foldlevel=99
+set foldcolumn=0
+nnoremap <space> za   "Space key for folding switch
+" }}}
+
+
 let g:unite_data_directory='~/.nvim/.cache/unite'
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable=1
@@ -125,22 +153,10 @@ nnoremap <space>/ :Unite line <cr>
 nnoremap <space>b :Unite -quick-match buffer <cr>
 nnoremap <C-l> :Unite<cr>
 nnoremap <space>y :Unite history/yank<cr>
-nnoremap <space> za   "Space key for folding switch
 
 
-" Let vim know Drupal files are php
-if has("autocmd")
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-    autocmd BufRead,BufNewFile *.inc set filetype=php
-    autocmd BufRead,BufNewFile *.profile set filetype=php
-    autocmd BufRead,BufNewFile *.view set filetype=php
-  augroup END
-endif
 " Omni complete for PHP
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd  FileType  php setlocal foldmethod=syntax omnifunc=phpcomplete_extended#CompletePHP
 " Wrap words
 
 " Save file when exiting insert mode

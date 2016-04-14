@@ -69,14 +69,13 @@ call neobundle#end()
   NeoBundleCheck
 " }}}
 
-
+" deoplete {{{
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_start_length = 3
 let g:deoplete#enable_smart_case = 1
+" }}}
 
-
-
- mapleader = ','
+let mapleader = ','
 " vim indent guides
 let g:indent_guides_auto_colors = 2
 hi IndentGuidesOdd  ctermbg=red

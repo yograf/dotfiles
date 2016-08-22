@@ -1,8 +1,10 @@
+
+
 #!/bin/sh
 
 # This is for android crap
 export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=${JAVA_HOME}/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
@@ -298,3 +300,18 @@ if [ -f /Users/mhartington/.tnsrc ]; then
   source /Users/mhartington/.tnsrc
 fi
 ###-tns-completion-end-###
+# Include Drush bash customizations.
+if [ -f "/home/yogevp/.drush/drush.bashrc" ] ; then
+  source /home/yogevp/.drush/drush.bashrc
+fi
+
+# Include Drush completion.
+if [ -f "/home/yogevp/.drush/drush.complete.sh" ] ; then
+  source /home/yogevp/.drush/drush.complete.sh
+fi
+
+# Include Drush prompt customizations.
+if [ -f "/home/yogevp/.drush/drush.prompt.sh" ] ; then
+  source /home/yogevp/.drush/drush.prompt.sh
+fi
+

@@ -30,6 +30,7 @@ NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'Yggdroot/hiPairs'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'ryanoasis/vim-devicons'
+NeoBundle 'majutsushi/tagbar'
 NeoBundle 'joonty/vdebug'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Townk/vim-autoclose'
@@ -75,6 +76,10 @@ let g:deoplete#auto_complete_start_length = 3
 let g:deoplete#enable_smart_case = 1
 " }}}
 
+" Vdebug config {{{
+  let g:vdebug_options = {}
+  let g:vdebug_options["watch_window_style"] = 'compact'
+" }}}
 let mapleader = ','
 " vim indent guides
 let g:indent_guides_auto_colors = 2

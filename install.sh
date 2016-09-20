@@ -80,7 +80,7 @@ rcup
 
 echo "---------------------------------------------------------"
 echo "Changing to zsh"
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
 
 echo "Installing Neovim"
 nvim +NeoBundleInstall +qall

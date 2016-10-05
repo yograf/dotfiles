@@ -26,41 +26,92 @@
     NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/vimproc.vim', { 'do': 'make' }
+
 NeoBundle 'Shougo/deoplete.nvim'
+
 NeoBundle 'Yggdroot/hiPairs'
+
 NeoBundle 'SirVer/ultisnips'
+
 NeoBundle 'ryanoasis/vim-devicons'
+
 NeoBundle 'majutsushi/tagbar'
+
 NeoBundle 'joonty/vdebug'
+
 NeoBundle 'Shougo/neomru.vim'
+
 NeoBundle 'Townk/vim-autoclose'
+
 NeoBundle 'altercation/vim-colors-solarized'
+
 NeoBundle 'Shougo/unite.vim'
+
 NeoBundle 'Shougo/neoyank.vim'
+
 NeoBundle 'bling/vim-airline'
+
 NeoBundle 'vim-airline/vim-airline-themes'
+
 NeoBundle 'Shougo/tabpagebuffer.vim'
+
 NeoBundle 'tsukkee/unite-help'
+
 NeoBundle 'honza/vim-snippets'
+
 NeoBundle 'mxw/vim-jsx'
+
+NeoBundle 'pangloss/vim-javascript'
+
 NeoBundle 'scrooloose/nerdcommenter'
+
+" Git command helpers (:G*)
 NeoBundle 'tpope/vim-fugitive'
+
+" Various paired bracket mappings.
 NeoBundle 'tpope/vim-unimpaired'
+
+" Handle surroundings (ys/cs/ds).
 NeoBundle 'tpope/vim-surround'
+
+" Unix command helpers (e.g. SudoWrite).
+NeoBundle 'tpope/vim-eunuch'
+
 NeoBundle 'easymotion/vim-easymotion'
+
 NeoBundle 'jaxbot/semantic-highlight.vim'
+
 NeoBundle 'ervandew/supertab'
+
 " PHP plugins
 NeoBundle 'yograf/vim-drupal-snippets'
 NeoBundle 'm2mdas/phpcomplete-extended'
 NeoBundle 'yograf/phpfolding.vim'
+
 NeoBundle 'kassio/neoterm'
+
+" Show git changes in gutter.
+NeoBundle 'airblade/vim-gitgutter'
+
+" Improved navigation between vim and tmux panes (C-h/C-j/C-k/C-l).
+NeoBundle 'christoomey/vim-tmux-navigator'
+
+" Add :Bdelete command to close buffer without changing layout.
+NeoBundle 'moll/vim-bbye'
+
+" Start screen and improved session management.
+NeoBundle 'mhinz/vim-startify'
+
 " Doc
 NeoBundle 'tobyS/vmustache'
 NeoBundle 'tobyS/pdv'
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle  'scrooloose/syntastic'
+
+" Single command for grabbing then swapping windows.
+NeoBundle 'wesQ3/vim-windowswap'
+
+" Syntax checking.
 NeoBundle  'scrooloose/syntastic'
 
 call neobundle#end()
@@ -76,20 +127,29 @@ let g:deoplete#auto_complete_start_length = 3
 let g:deoplete#enable_smart_case = 1
 " }}}
 
+" javascript {{{
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+" }}}
+
 " Vdebug config {{{
   let g:vdebug_options = {}
   let g:vdebug_options["watch_window_style"] = 'compact'
 " }}}
+
 let mapleader = ','
 " vim indent guides
 let g:indent_guides_auto_colors = 2
 hi IndentGuidesOdd  ctermbg=red
 hi IndentGuidesEven ctermbg=darkgrey
+
+" Highlight current line.
 set cursorline                  " Highlight current line
-hi CursorLine   cterm=NONE ctermbg=240 ctermfg=NONE
+
+hi CursorLine  cterm=NONE ctermbg=240 ctermfg=NONE
 hi TabLineFill ctermfg=NONE ctermbg=NONE
 hi TabLine ctermfg=Blue ctermbg=236
 hi TabLineSel ctermfg=white ctermbg=red
+" Show current line number.
 set number                      " Line numbers on
 set listchars=tab:›\ ,trail:·,extends:#,nbsp:. " Highlight problematic whitespace
 
@@ -187,8 +247,7 @@ set wrap
 set ai
 " set smart autoindent
 set si
-" hilight cursor coloumn
-"
+
 " Boost speed by altering character redraw rates to your terminal
 set ttyfast
 

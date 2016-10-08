@@ -37,6 +37,9 @@ NeoBundle 'ryanoasis/vim-devicons'
 
 NeoBundle 'majutsushi/tagbar'
 
+" Autosave
+NeoBundle '907th/vim-auto-save'
+
 NeoBundle 'joonty/vdebug'
 
 NeoBundle 'Shougo/neomru.vim'
@@ -64,6 +67,7 @@ NeoBundle 'mxw/vim-jsx'
 NeoBundle 'pangloss/vim-javascript'
 
 NeoBundle 'scrooloose/nerdcommenter'
+
 
 " Git command helpers (:G*)
 NeoBundle 'tpope/vim-fugitive'
@@ -168,6 +172,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" Autosave
+let g:auto_save = 1  " enable AutoSave on Vim startup
+
 " Airline power line
 let g:webdevicons_enable = 1
 let g:airline_powerline_fonts = 1
@@ -224,14 +231,15 @@ autocmd  FileType  php setlocal foldmethod=syntax omnifunc=phpcomplete_extended#
 " Wrap words
 
 " Save file when exiting insert mode
-map <Esc> <Esc>:w<CR>
+" map <Esc> <Esc>:w<CR>
 
 " Use ; for commands
 nnoremap ; :
 
 "autocmd FileType php :autocmd InsertLeave * :w
-
 map <F12> <Esc>:EnableFastPHPFolds<Cr> 
+
+" Disable arrow keys on insert mode.
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 inoremap <Up> <NOP>
@@ -243,8 +251,10 @@ syntax enable
 " colorscheme solarized
 let g:solarized_termcolors=256
 set wrap
+
 " set autoindent
 set ai
+
 " set smart autoindent
 set si
 

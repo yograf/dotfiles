@@ -31,7 +31,14 @@ NeoBundle 'Shougo/deoplete.nvim'
 
 NeoBundle 'Yggdroot/hiPairs'
 
+" Snippets
+NeoBundle 'epilande/vim-es2015-snippets'
+NeoBundle 'epilande/vim-react-snippets'
+
 NeoBundle 'SirVer/ultisnips'
+
+" HTML creation
+NeoBundle 'mattn/emmet-vim'
 
 NeoBundle 'ryanoasis/vim-devicons'
 
@@ -111,6 +118,9 @@ NeoBundle 'tobyS/vmustache'
 NeoBundle 'tobyS/pdv'
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
+
+" Solarized
+NeoBundle 'altercation/vim-colors-solarized'
 
 " Single command for grabbing then swapping windows.
 NeoBundle 'wesQ3/vim-windowswap'
@@ -247,9 +257,9 @@ inoremap <Down> <NOP>
 
 " solarized
 syntax enable
-" set background=dark
-" colorscheme solarized
-let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+" let g:solarized_termcolors=256
 set wrap
 
 " set autoindent
@@ -276,3 +286,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Eslint
+let g:syntastic_javascript_checkers = ['eslint']

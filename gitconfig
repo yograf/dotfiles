@@ -16,7 +16,6 @@
   user = yograf
 
 [core]
-  pager = zsh -lc 'diff-highlight | strip_diff_leading_symbols | less -r' -
 
 [color "diff-highlight"]
   oldNormal = "red bold"

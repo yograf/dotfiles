@@ -9,6 +9,7 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.inc setf php.drupal
   au! BufRead,BufNewFile *.module setf php.drupal
   au! BufRead,BufNewFile *.profile setf php.drupal
+  au! BufRead,BufNewFile *.php setf php.drupal
   au! BufRead,BufNewFile *.info setf dosini
 
   " EJS and Swig files.

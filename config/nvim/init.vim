@@ -100,6 +100,8 @@ NeoBundle 'm2mdas/phpcomplete-extended'
 NeoBundle 'yograf/phpfolding.vim'
 
 NeoBundle 'kassio/neoterm'
+NeoBundle 'hkupty/nvimux'
+NeoBundle 'scrooloose/nerdtree'
 
 " Show git changes in gutter.
 NeoBundle 'airblade/vim-gitgutter'
@@ -135,11 +137,21 @@ call neobundle#end()
   NeoBundleCheck
 " }}}
 
+" NerdTree
+map <F2> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeFind<CR>
+
 " deoplete {{{
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_start_length = 3
 let g:deoplete#enable_smart_case = 1
 " }}}
+
+" Nvimux
+let g:nvimux_prefix='<C-a>'
+let nvimux_open_term_by_default=1
+
+"
 
 " javascript {{{
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
@@ -181,6 +193,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories = ['~/.nvim/bundle/vim-drupal-snippets']
+let g:UltiSnipsSnippetsDir = '~/.nvim/after/snippets'
 
 " Autosave
 let g:auto_save = 1  " enable AutoSave on Vim startup
@@ -231,7 +245,7 @@ let g:unite_source_history_yank_enable=1
 let g:unite_prompt='» '
 nnoremap <C-p> :Unite file_mru file_rec/neovim <cr>
 nnoremap <space>/ :Unite line <cr>
-nnoremap <space>b :Unite -quick-match buffer <cr>
+nnoremap <space>b :Unite buffer <cr>
 nnoremap <C-l> :Unite<cr>
 nnoremap <space>y :Unite history/yank<cr>
 
@@ -257,9 +271,9 @@ inoremap <Down> <NOP>
 
 " solarized
 syntax enable
+let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
-" let g:solarized_termcolors=256
 set wrap
 
 " set autoindent
@@ -289,3 +303,7 @@ nnoremap <C-H> <C-W><C-H>
 
 " Eslint
 let g:syntastic_javascript_checkers = ['eslint']
+
+
+" Fold bg color
+highlight Folded ctermbg=green

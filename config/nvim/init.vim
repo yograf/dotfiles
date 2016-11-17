@@ -100,6 +100,7 @@ NeoBundle 'm2mdas/phpcomplete-extended'
 NeoBundle 'yograf/phpfolding.vim'
 
 NeoBundle 'kassio/neoterm'
+" Tmux replacment
 NeoBundle 'hkupty/nvimux'
 NeoBundle 'scrooloose/nerdtree'
 
@@ -307,3 +308,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " Fold bg color
 highlight Folded ctermbg=green
+
+" Clipboard support
+set clipboard+=unnamedplus

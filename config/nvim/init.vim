@@ -296,6 +296,10 @@ set list!
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
 
+" Open new splits on right and bottom.
+set splitbelow
+set splitright
+
 " Easy navigation between splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

@@ -31,6 +31,18 @@ NeoBundle 'Shougo/deoplete.nvim'
 
 NeoBundle 'Yggdroot/hiPairs'
 
+" vimwiki
+NeoBundle 'vimwiki/vimwiki'
+
+" Comma and semi-colon insertion bliss for vim.
+NeoBundle 'lfilho/cosco.vim'
+
+" tab rename
+NeoBundle 'gcmt/taboo.vim'
+
+" Total commander
+NeoBundle 'vifm/neovim-vifm'
+
 " Snippets
 NeoBundle 'epilande/vim-es2015-snippets'
 NeoBundle 'epilande/vim-react-snippets'
@@ -41,7 +53,7 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'mattn/emmet-vim'
 
 NeoBundle 'ryanoasis/vim-devicons'
-
+NeoBundle 'lumiliet/vim-twig'
 NeoBundle 'majutsushi/tagbar'
 
 " Autosave
@@ -108,7 +120,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'airblade/vim-gitgutter'
 
 " Improved navigation between vim and tmux panes (C-h/C-j/C-k/C-l).
-NeoBundle 'christoomey/vim-tmux-navigator'
+" NeoBundle 'christoomey/vim-tmux-navigator'
 
 " Add :Bdelete command to close buffer without changing layout.
 NeoBundle 'moll/vim-bbye'
@@ -139,8 +151,10 @@ call neobundle#end()
 " }}}
 
 " NerdTree
-map <F2> :NERDTreeToggle<CR>
-map <leader>n :NERDTreeFind<CR>
+nnoremap <silent> <F2> :NERDTreeFind<CR>
+noremap <F3> :NERDTreeToggle<CR>
+map <F3> :NERDTreeToggle<CR>
+map <F2> :NERDTreeFind<CR>
 
 " deoplete {{{
 let g:deoplete#enable_at_startup = 1
@@ -315,3 +329,16 @@ highlight Folded ctermbg=green
 
 " Clipboard support
 set clipboard+=unnamedplus
+
+
+"  Edit vimrc -> init.vim
+nnoremap <leader>v :e $MYVIMRC<CR>
+nnoremap <leader>s :source $MYVIMRC<CR>
+" Down line without edit
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+" Auto comma or semicolon
+" nmap <F9> :AutoCommaOrSemiColonToggle<CR>
+let g:auto_comma_or_semicolon = 1     " Default : 0
+

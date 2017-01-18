@@ -153,8 +153,9 @@ call neobundle#end()
 " NerdTree
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
-map <F3> :NERDTreeToggle<CR>
 map <F2> :NERDTreeFind<CR>
+let g:NERDTreeWinSize=60
+
 
 " deoplete {{{
 let g:deoplete#enable_at_startup = 1
@@ -340,5 +341,10 @@ nmap <CR> o<Esc>
 
 " Auto comma or semicolon
 " nmap <F9> :AutoCommaOrSemiColonToggle<CR>
-let g:auto_comma_or_semicolon = 1     " Default : 0
+let g:auto_comma_or_semicolon = 0     " Default : 0;
+nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 
+
+" Fix gitgutter
+let g:gitgutter_async = 0

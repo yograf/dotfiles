@@ -277,7 +277,7 @@ autocmd  FileType  php setlocal foldmethod=syntax omnifunc=phpcomplete_extended#
 nnoremap ; :
 
 "autocmd FileType php :autocmd InsertLeave * :w
-map <F12> <Esc>:EnableFastPHPFolds<Cr> 
+map <F11> <Esc>:EnableFastPHPFolds<Cr> 
 
 " Disable arrow keys on insert mode.
 inoremap <Left> <NOP>

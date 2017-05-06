@@ -145,7 +145,7 @@ NeoBundle  'scrooloose/syntastic'
 
 call neobundle#end()
 " Required:
-  filetype plugin indent on
+  filetype plugin indent on " load filetype-specific indent files
   let pluginsExist=1
   NeoBundleCheck
 " }}}
@@ -348,3 +348,13 @@ imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 
 " Fix gitgutter
 let g:gitgutter_async = 0
+
+set wildmenu            " visual autocomplete for command menu
+set lazyredraw          " redraw only when we need to.
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" highlight last inserted text
+nnoremap gV `[v`]

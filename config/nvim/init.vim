@@ -87,6 +87,9 @@ NeoBundle 'pangloss/vim-javascript'
 
 NeoBundle 'scrooloose/nerdcommenter'
 
+" Change vim working directory to project root
+NeoBundle 'airblade/vim-rooter'
+
 
 " Git command helpers (:G*)
 NeoBundle 'tpope/vim-fugitive'

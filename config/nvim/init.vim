@@ -38,9 +38,6 @@ NeoBundle 'Yggdroot/hiPairs'
 " vimwiki
 NeoBundle 'vimwiki/vimwiki'
 
-" Comma and semi-colon insertion bliss for vim.
-NeoBundle 'lfilho/cosco.vim'
-
 " tab rename
 NeoBundle 'gcmt/taboo.vim'
 
@@ -356,13 +353,6 @@ nnoremap <leader>s :source $MYVIMRC<CR>
 " Down line without edit
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
-
-" Auto comma or semicolon
-" nmap <F9> :AutoCommaOrSemiColonToggle<CR>
-let g:auto_comma_or_semicolon = 0     " Default : 0;
-nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
-imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
-
 
 " Fix gitgutter
 let g:gitgutter_async = 0

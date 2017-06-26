@@ -27,9 +27,13 @@
 
 NeoBundle 'Shougo/vimproc.vim', { 'do': 'make' }
 
+" Prettier is s Javascript formater
+NeoBundle 'mitermayer/vim-prettier'
+
 NeoBundle 'Shougo/deoplete.nvim'
 
 NeoBundle 'Yggdroot/hiPairs'
+
 
 " vimwiki
 NeoBundle 'vimwiki/vimwiki'
@@ -159,6 +163,13 @@ noremap <F3> :NERDTreeToggle<CR>
 map <F2> :NERDTreeFind<CR>
 let g:NERDTreeWinSize=60
 
+" prettier {{{
+
+" Don't add semis
+let g:prettier#config#semi = 'false'
+" print spaces between brackets
+let g:prettier#config#bracket_spacing = 'true'
+" }}}
 
 " deoplete {{{
 let g:deoplete#enable_at_startup = 1
@@ -330,6 +341,10 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " Fold bg color
 highlight Folded ctermbg=green
+
+
+hi Comment gui=italic cterm=italic
+hi htmlArg gui=italic cterm=italic
 
 " Clipboard support
 set clipboard+=unnamedplus

@@ -178,7 +178,6 @@ let g:deoplete#enable_smart_case = 1
 let g:nvimux_prefix='<C-a>'
 let nvimux_open_term_by_default=1
 
-"
 
 " javascript {{{
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
@@ -190,6 +189,7 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " }}}
 
 let mapleader = ','
+
 " vim indent guides
 let g:indent_guides_auto_colors = 2
 hi IndentGuidesOdd  ctermbg=red
@@ -350,6 +350,7 @@ set clipboard+=unnamedplus
 "  Edit vimrc -> init.vim
 nnoremap <leader>v :e $MYVIMRC<CR>
 nnoremap <leader>s :source $MYVIMRC<CR>
+
 " Down line without edit
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>

@@ -30,7 +30,8 @@ NeoBundle 'Shougo/vimproc.vim', { 'do': 'make' }
 " Prettier is s Javascript formater
 NeoBundle 'mitermayer/vim-prettier'
 
-NeoBundle 'Shougo/deoplete.nvim'
+"NeoBundle 'Shougo/deoplete.nvim'
+NeoBundle 'roxma/nvim-completion-manager'
 
 NeoBundle 'Yggdroot/hiPairs'
 
@@ -45,16 +46,11 @@ NeoBundle 'gcmt/taboo.vim'
 NeoBundle 'vifm/neovim-vifm'
 
 " Snippets
-NeoBundle 'epilande/vim-es2015-snippets'
-NeoBundle 'epilande/vim-react-snippets'
 
 NeoBundle 'SirVer/ultisnips'
 
-" HTML creation
-NeoBundle 'mattn/emmet-vim'
 
 NeoBundle 'ryanoasis/vim-devicons'
-NeoBundle 'lumiliet/vim-twig'
 NeoBundle 'majutsushi/tagbar'
 
 " Autosave
@@ -80,7 +76,6 @@ NeoBundle 'Shougo/tabpagebuffer.vim'
 
 NeoBundle 'tsukkee/unite-help'
 
-NeoBundle 'honza/vim-snippets'
 
 NeoBundle 'mxw/vim-jsx'
 
@@ -111,7 +106,6 @@ NeoBundle 'jaxbot/semantic-highlight.vim'
 NeoBundle 'ervandew/supertab'
 
 " PHP plugins
-NeoBundle 'yograf/vim-drupal-snippets'
 NeoBundle 'm2mdas/phpcomplete-extended'
 NeoBundle 'yograf/phpfolding.vim'
 
@@ -161,6 +155,8 @@ map <F2> :NERDTreeFind<CR>
 let g:NERDTreeWinSize=60
 
 " prettier {{{
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
 
 " Don't add semis
 let g:prettier#config#semi = 'false'
@@ -169,9 +165,9 @@ let g:prettier#config#bracket_spacing = 'true'
 " }}}
 
 " deoplete {{{
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_start_length = 3
-let g:deoplete#enable_smart_case = 1
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#auto_complete_start_length = 3
+"let g:deoplete#enable_smart_case = 1
 " }}}
 
 " Nvimux
@@ -214,13 +210,21 @@ map <S-L> gt
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
 " ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+
+let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
+	let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
+	let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
+	let g:UltiSnipsRemoveSelectModeMappings = 0
+	" optional
+	inoremap <silent> <c-u> <c-r>=cm#sources#ultisnips#trigger_or_popup("\<Plug>(ultisnips_expand)")<cr>
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories = ['~/.nvim/bundle/vim-drupal-snippets']
+" let g:UltiSnipsSnippetDirectories = ['~/.nvim/bundle/vim-drupal-snippets']
 let g:UltiSnipsSnippetsDir = '~/.nvim/after/snippets'
 
 " Autosave
@@ -255,6 +259,7 @@ set nojoinspaces        " Prevents inserting two spaces after punctuation on a j
 set nostartofline       " Do not jump to first character with page commands.
 "set wildignorecase
 set ignorecase " Command line ignore case
+set smartcase
 
 " Folding settings {{{
 
@@ -275,6 +280,7 @@ nnoremap <space>/ :Unite line <cr>
 nnoremap <space>b :Unite buffer <cr>
 nnoremap <C-l> :Unite<cr>
 nnoremap <space>y :Unite history/yank<cr>
+nnoremap <space>t :Unite tab<cr>
 
 
 " Omni complete for PHP
@@ -367,3 +373,6 @@ nnoremap k gk
 
 " highlight last inserted text
 nnoremap gV `[v`]
+
+" Reload file when it chaged outside vim
+set autoread

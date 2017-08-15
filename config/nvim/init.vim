@@ -155,13 +155,15 @@ map <F2> :NERDTreeFind<CR>
 let g:NERDTreeWinSize=60
 
 " prettier {{{
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
 
 " Don't add semis
 let g:prettier#config#semi = 'false'
 " print spaces between brackets
 let g:prettier#config#bracket_spacing = 'true'
+" Trailing commas none/es5/all
+let g:prettier#config#trailing_comma = 'none'
 " }}}
 
 " deoplete {{{

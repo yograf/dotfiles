@@ -7,11 +7,6 @@ nnoremap <Leader>; ,
 " Use ; for commands
 nnoremap ; :
 
-" Disable arrow keys on insert mode.
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
 
 " Move to left and right tabs
 map <S-H> gT
@@ -23,13 +18,13 @@ nmap <Leader>k gk
 
 
 " window keys
-nnoremap <Leader>w< <C-w><
-nnoremap <Leader>w> <C-w>>
-nnoremap <Leader>w- <C-w>-
-nnoremap <Leader>w+ <C-w>+
-nnoremap <Leader>ws :split<CR>
-nnoremap <Leader>wv :vsplit<CR>
-nnoremap <Leader>wx :close<CR>
+" nnoremap <Leader>w< <C-w><
+" nnoremap <Leader>w> <C-w>>
+" nnoremap <Leader>w- <C-w>-
+" nnoremap <Leader>w+ <C-w>+
+" nnoremap <Leader>ws :split<CR>
+" nnoremap <Leader>wv :vsplit<CR>
+" nnoremap <Leader>wx :close<CR>
 
 " %% to expand active buffer location on cmdline
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -77,12 +72,14 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " neomake
-nmap <Leader><Space>o :lopen<CR>
-nmap <Leader><Space>c :lclose<CR>
-nmap <Leader><Space>, :ll<CR>
-nmap <Leader><Space>n :lnext<CR>
-nmap <Leader><Space>p :lprev<CR>
+" nmap <Leader><Space>o :lopen<CR>
+" nmap <Leader><Space>c :lclose<CR>
+" nmap <Leader><Space>, :ll<CR>
+" nmap <Leader><Space>n :lnext<CR>
+" nmap <Leader><Space>p :lprev<CR>
 
+" ALE
+nmap <leader>d <Plug>(ale_fix)
 " folding
 nmap <Leader>f zf%
 
@@ -90,8 +87,18 @@ nmap <Leader>f zf%
 autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
 
 " autocomplete
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-let g:UltiSnipsExpandTrigger="<C-j>"
+"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" let g:UltiSnipsExpandTrigger="<C-j>"
+"  let g:UltiSnipsExpandTrigger="<tab>"
+"  let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"  let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips', 'UltiSnips']
+  " If you want :UltiSnipsEdit to split your window.
+  let g:UltiSnipsEditSplit="vertical"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " colorizer
@@ -106,3 +113,8 @@ nnoremap <C-H> <C-W><C-H>
 
 " Exit terminal mode
 tnoremap <Esc> <C-\><C-n>
+
+"  Edit vimrc -> init.vim
+nnoremap <leader>v :e $MYVIMRC<CR>
+nnoremap <leader>s :source $MYVIMRC<CR>
+

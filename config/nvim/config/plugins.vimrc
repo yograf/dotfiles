@@ -1,14 +1,21 @@
 filetype plugin indent on
 
 " neomake config
-autocmd! BufWritePost * Neomake
+" autocmd! BufWritePost * Neomake
 " autocmd BufLeave * QFix
 
-let g:neomake_place_signs = 0
+" let g:neomake_place_signs = 0
 
-let g:neomake_open_list = 2
+" let g:neomake_open_list = 2
 
-let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:neomake_javascript_enabled_makers = ['eslint']
+
+" ALE
+let g:ale_fixers = {
+  \ 'javascript': ['eslint']
+  \ }
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
 
 " Theme
 let g:solarized_termtrans = 1
@@ -42,23 +49,19 @@ augroup omnifuncs
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup end
 
-" tern
-if exists('g:plugs["tern_for_vim"]')
-  let g:deoplete#omni#functions = {}
-  let g:deoplete#omni#functions.javascript = [
-    \ 'tern#Complete',
-    \ 'jspc#omni'
-  \]
-endif
+augroup javascript_folding
+    au!
+    au FileType javascript setlocal foldmethod=syntax
+augroup END
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources = {}
-let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#sources = {}
+"let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 let g:tern_request_timeout = 1
-let g:SuperTabClosePreviewOnPopupClose = 1
+"let g:SuperTabClosePreviewOnPopupClose = 1
 
 " disable colorizer at startup
 let g:colorizer_startup = 0
@@ -78,30 +81,48 @@ nmap <F1> <C-a>q
 
 
 " unite
-let g:unite_data_directory='~/.nvim/.cache/unite'
-let g:unite_enable_start_insert=1
-let g:unite_source_history_yank_enable=1
-let g:unite_prompt='» '
-nnoremap <C-p> :Unite file_mru file_rec/neovim <cr>
-nnoremap <space>/ :Unite line <cr>
-nnoremap b :Unite buffer <cr>
-nnoremap <C-l> :Unite<cr>
-nnoremap <space>y :Unite history/yank<cr>
-nnoremap <space>t :Unite tab<cr>
+
+" let g:unite_data_directory='~/.nvim/.cache/unite'
+
+"
+" Unite Marks:
+"   show file marks (eg, `mA`) in unite-mark.vim, if it's available.
+"
+
+"let g:unite_source_mark_marks =
+"  \ "abcdefghijklmnopqrstuvwxyz" .
+"  \ "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+" let g:unite_enable_start_insert=1
+"let g:unite_source_history_yank_enable=1
+"let g:unite_prompt='» '
+" nnoremap <C-p> :Unite file_mru file_rec/neovim <cr>
+"nnoremap <C-p> :Unite file_mru <cr>
+nnoremap / :Unite line <cr>
+"nnoremap b :Unite buffer <cr>
+" nnoremap <C-l> :Unite<cr>
+" nnoremap <space>y :Unite history/yank<cr>
+" nnoremap t :Unite tab<cr>
+map <C-p> [unite]p
+map b [unite]b
+map </> [unite]/
 
 
 " prettier
 let g:prettier#autoformat = 0
 
 " Don't add semis
-let g:prettier#config#semi = 'false'
+let g:prettier#config#semi = 'true'
 " print spaces between brackets
 let g:prettier#config#bracket_spacing = 'true'
 " Trailing commas none/es5/all
 let g:prettier#config#trailing_comma = 'none'
+" use tabs
+let g:prettier#use_tabs = 'true'
 
 " Print width
-let g:prettier#config#print_width = 60
+let g:prettier#config#print_width = 160
+let g:prettier#config#tab_width = 2
 "
 "
 " NerdTree

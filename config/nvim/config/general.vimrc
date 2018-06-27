@@ -10,6 +10,7 @@ set incsearch
 set ignorecase " Command line ignore case
 set smartcase
 
+" Show line numbers
 set number
 
 " allow backspacing over everything in insert mode
@@ -27,10 +28,17 @@ set undolevels=100
 set undoreload=1000
 
 set backupdir=~/.config/nvim/backup
+
+" Keep .swp files in uniquely-named files in $HOME/.vim
 set directory=~/.config/nvim/backup
 
 set ruler		" show the cursor position all the time
+
+" Highlight the line with the cursor
 set cursorline
+
+" Wrap long lines on word boundaries
+set wrap linebreak
 
 set showcmd		" display incomplete commands
 
@@ -65,10 +73,17 @@ endif " has("autocmd")
 
 " tab stuff
 set tabstop=2
-set softtabstop=2
-set expandtab
+
+" Number of spaces to use for a <Tab> during editing operations
+"set softtabstop=2
+
+" This is closed for now - I'm using tabs
+set noexpandtab
+
 set smarttab
-set shiftwidth=2
+
+" The number of spaces to use for each indent
+set shiftwidth=1
 set autoindent
 set smartindent
 
@@ -85,7 +100,8 @@ set ffs=unix,dos,mac
 
 " Always utf8
 set termencoding=utf-8
-" set encoding=utf-8
+set encoding=utf-8
+set enc=utf-8
 set fileencoding=utf-8
 
 set so=5 " scroll lines above/below cursor
@@ -121,7 +137,7 @@ set hid " buffer becomes hidden when abandoned
 " stop highlighting of underscores in markdown files
 autocmd BufNewFile,BufRead,BufEnter *.md,*.markdown :syntax match markdownIgnore "_"
 
-" clipboard
+" Enable yanking to the clipboard
 set clipboard=unnamedplus
 
 set completeopt=longest,menuone,preview
@@ -129,3 +145,20 @@ set completeopt=longest,menuone,preview
 " Italic comments
 hi Comment gui=italic cterm=italic
 hi htmlArg gui=italic cterm=italic
+
+" Folding settings {{{
+
+set foldenable
+set foldmethod=syntax
+set foldlevel=99
+set foldcolumn=0
+nnoremap <space> za   "Space key for folding switch
+filetype plugin indent on " activates indenting for files
+
+ " Use modeline overrides
+  set modeline
+  set modelines=10
+
+  "Reselect visual block after indent/outdent
+  vnoremap < <gv
+  vnoremap > >gv

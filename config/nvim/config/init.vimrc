@@ -1,44 +1,56 @@
 call plug#begin('~/.config/nvim/plugged')
 
-" colorschemes
-" Solarized
+" colorschemes Solarized
 Plug 'altercation/vim-colors-solarized'
 
 " general
-Plug 'ervandew/supertab'
-Plug 'benekastah/neomake'
-Plug 'Shougo/deoplete.nvim'
+" Plug 'ervandew/supertab'
+" Plug 'benekastah/neomake'
+Plug 'roxma/nvim-completion-manager'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeFind' }
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 Plug 'isRuslan/vim-es6'
 Plug 'haya14busa/incsearch.vim'
 Plug 'vim-utils/vim-husk'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
+Plug 'yograf/vim-fastunite'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/neoyank.vim'
+Plug 'Shougo/unite-outline'
+Plug 'tsukkee/unite-tag'
 Plug 'easymotion/vim-easymotion'
 Plug '907th/vim-auto-save'
 
+" Tabs
+
+Plug 'gcmt/taboo.vim'
+
 " terminal
 Plug 'kassio/neoterm'
-" tmux like
+Plug 'wincent/terminus'
 Plug 'hkupty/nvimux'
 
 " editing
 Plug 'junegunn/vim-easy-align'
 Plug 'mbbill/undotree'
-Plug 'tpope/vim-commentary'
-Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides' " `,ig` to toggle
 Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-sleuth'
+Plug 'mileszs/ack.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'vim-scripts/camelcasemotion'
 
+" Games
+Plug 'johngrib/vim-game-code-break'
 " eye candy
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
@@ -46,21 +58,29 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'lilydjwg/colorizer', { 'on': 'ColorToggle' }
 
 " javascript
-" Prettier is s Javascript formater
+Plug 'prettier/vim-prettier', {
+ \ 'do': 'yarn install',
+ \ 'for': ['javascript', 'typescript', 'css', 'json', 'graphql', 'markdown'] }
 Plug 'mitermayer/vim-prettier'
+Plug 'pangloss/vim-javascript'
 Plug 'guileen/vim-node-dict'
 Plug 'moll/vim-node'
 Plug 'othree/yajs.vim'
 Plug '1995eaton/vim-better-javascript-completion'
 Plug 'gavocanov/vim-js-indent'
-Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'digitaltoad/vim-jade'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
+Plug 'w0rp/ale'
 
+" Total commander
+Plug 'vifm/neovim-vifm'
 
+" Git command helpers (:G*)
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " other
 Plug 'ciaranm/detectindent'

@@ -95,6 +95,14 @@ set ttimeoutlen=100
 " detect .md as markdown instead of modula-2
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+
+" == AUTOCMD ================================
+" by default .ts file are not identified as typescript and .tsx files are not
+" identified as typescript react file, so add following
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+" == AUTOCMD END ================================
+
 " Unix as standard file type
 set ffs=unix,dos,mac
 
@@ -151,7 +159,9 @@ hi htmlArg gui=italic cterm=italic
 set foldenable
 set foldmethod=syntax
 set foldlevel=99
+set foldlevelstart=99
 set foldcolumn=0
+
 nnoremap <space> za   "Space key for folding switch
 filetype plugin indent on " activates indenting for files
 

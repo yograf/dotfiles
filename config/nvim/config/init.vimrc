@@ -2,13 +2,13 @@ call plug#begin('~/.config/nvim/plugged')
 
 " colorschemes Solarized
 Plug 'altercation/vim-colors-solarized'
-
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " general
 " Plug 'ervandew/supertab'
 " Plug 'benekastah/neomake'
-Plug 'roxma/nvim-completion-manager'
+" Plug 'roxma/nvim-completion-manager'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeFind' }
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 Plug 'isRuslan/vim-es6'
 Plug 'haya14busa/incsearch.vim'
@@ -22,9 +22,15 @@ Plug 'Shougo/unite-outline'
 Plug 'tsukkee/unite-tag'
 Plug 'easymotion/vim-easymotion'
 Plug '907th/vim-auto-save'
+" Plug 'dbeniamine/cheat.sh-vim'
+"Plug 'carlosrocha/vim-chrome-devtools', { 'do': 'npm install && npm run build' }
+
+" Typescript
+Plug 'ianks/vim-tsx'
+Plug 'leafgarland/typescript-vim'
+
 
 " Tabs
-
 Plug 'gcmt/taboo.vim'
 
 " terminal
@@ -58,25 +64,23 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'lilydjwg/colorizer', { 'on': 'ColorToggle' }
 
 " javascript
-Plug 'prettier/vim-prettier', {
- \ 'do': 'yarn install',
- \ 'for': ['javascript', 'typescript', 'css', 'json', 'graphql', 'markdown'] }
-Plug 'mitermayer/vim-prettier'
 Plug 'pangloss/vim-javascript'
-Plug 'guileen/vim-node-dict'
+" Plug 'guileen/vim-node-dict'
+" https://github.com/moll/vim-node
+" gf
 Plug 'moll/vim-node'
-Plug 'othree/yajs.vim'
-Plug '1995eaton/vim-better-javascript-completion'
-Plug 'gavocanov/vim-js-indent'
-Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
-Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'digitaltoad/vim-jade'
-Plug 'elzr/vim-json'
+"Plug 'othree/yajs.vim'
+"Plug '1995eaton/vim-better-javascript-completion'
+"Plug 'gavocanov/vim-js-indent'
+"Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
+"Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+"Plug 'digitaltoad/vim-jade'
+"Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
 Plug 'w0rp/ale'
 
 " Total commander
-Plug 'vifm/neovim-vifm'
+"Plug 'vifm/neovim-vifm'
 
 " Git command helpers (:G*)
 Plug 'tpope/vim-fugitive'
@@ -86,9 +90,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ciaranm/detectindent'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'othree/csscomplete.vim'
+"Plug 'othree/csscomplete.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'sukima/xmledit'
+"Plug 'sukima/xmledit'
 
 " text objects
 Plug 'wellle/targets.vim'

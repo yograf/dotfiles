@@ -10,12 +10,23 @@ filetype plugin indent on
 
 " let g:neomake_javascript_enabled_makers = ['eslint']
 
+" COC
+" command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+
+
+" coc extensions
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+
 " ALE
 let g:ale_fixers = {
-  \ 'javascript': ['eslint']
+  \ 'javascript': ['prettier']
   \ }
-let g:ale_lint_on_save = 1
+
+let g:ale_fix_on_save = 0
+
 let g:ale_lint_on_text_changed = 0
+
+let g:ale_linter_explicit = 1
 
 " Theme
 let g:solarized_termtrans = 1
@@ -101,30 +112,37 @@ nmap <F1> <C-a>q
 nnoremap / :Unite line <cr>
 "nnoremap b :Unite buffer <cr>
 " nnoremap <C-l> :Unite<cr>
-" nnoremap <space>y :Unite history/yank<cr>
-" nnoremap t :Unite tab<cr>
+ nnoremap <space>y :Unite history/yank<cr>
+ nnoremap t :Unite tab<cr>
 map <C-p> [unite]p
 map b [unite]b
 map </> [unite]/
+map <space>g [unite]g
 
 
 " prettier
-let g:prettier#autoformat = 0
+"let g:prettier#autoformat = 0
 
 " Don't add semis
-let g:prettier#config#semi = 'true'
+"let g:prettier#config#semi = 'true'
 " print spaces between brackets
-let g:prettier#config#bracket_spacing = 'true'
+"let g:prettier#config#bracket_spacing = 'true'
 " Trailing commas none/es5/all
-let g:prettier#config#trailing_comma = 'none'
+"let g:prettier#config#trailing_comma = 'none'
 " use tabs
-let g:prettier#use_tabs = 'true'
+"let g:prettier#config#use_tabs = 'true'
+"let g:prettier#config#tab_width: '4'
+"let g:prettier#eslint_integration: 'true'
 
 " Print width
-let g:prettier#config#print_width = 160
-let g:prettier#config#tab_width = 2
+"let g:prettier#config#print_width = 65
 "
 "
+"
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " NerdTree
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>

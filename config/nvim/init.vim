@@ -350,7 +350,7 @@ nmap <silent>b :Denite buffer<CR>
 nmap <C-p> :DeniteProjectDir file/rec<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
-
+tnoremap <Esc> <C-\><C-n>
 
 " Unite
  let g:unite_enable_start_insert=1

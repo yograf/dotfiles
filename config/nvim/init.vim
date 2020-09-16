@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug '907th/vim-auto-save'
 
+Plug 'pantharshit00/vim-prisma'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -20,6 +21,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'christoomey/vim-tmux-navigator'
 
+Plug 'jparise/vim-graphql'
+
 
 Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
@@ -31,6 +34,10 @@ call plug#end()
 inoremap jk <ESC>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
+
+
+" Refresh files after change
+set autoread
 
 " open NERDTree automatically
 "autocmd StdinReadPre * let s:std_in=1
@@ -195,6 +202,20 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " Search case ignore
 set ignorecase " Command line ignore case
@@ -350,7 +371,7 @@ nmap <silent>b :Denite buffer<CR>
 nmap <C-p> :DeniteProjectDir file/rec<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
-
+tnoremap <Esc> <C-\><C-n>
 
 " Unite
  let g:unite_enable_start_insert=1
@@ -415,3 +436,14 @@ endfunction
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 let g:NERDTreeWinSize=60
+
+" Always show tabs line on top
+set showtabline=2
+
+
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
